@@ -1,0 +1,19 @@
+{
+  "name": "react-use-sync-scroll",
+  "version": "0.0.1",
+  "description": "A custom React hook for synchronized element scrolling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agorf/react-use-sync-scroll.git"
+  },
+  "author": "Angelos Orfanakos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agorf/react-use-sync-scroll/issues"
+  },
+  "homepage": "https://github.com/agorf/react-use-sync-scroll"
+}

@@ -1,7 +1,7 @@
 # useSyncScroll
 
 A [custom][] [React hook][hooks] for synchronized, proportional, horizontal
-and/or vertical element scrolling.
+and/or vertical DOM element scrolling.
 
 [custom]: https://reactjs.org/docs/hooks-custom.html
 [hooks]: https://reactjs.org/docs/hooks-intro.html

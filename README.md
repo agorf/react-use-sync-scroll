@@ -42,7 +42,7 @@ It returns an array of refs to assign to your elements. For example:
 ```javascript
 import useSyncScroll from 'react-use-sync-scroll';
 
-function myComponent() {
+function SomeComponent() {
   const refs = useSyncScroll(3, { vertical: true, horizontal: false });
 
   return (

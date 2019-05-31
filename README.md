@@ -7,7 +7,7 @@ and/or vertical DOM element scrolling.
 
 [custom]: https://reactjs.org/docs/hooks-custom.html
 [hooks]: https://reactjs.org/docs/hooks-intro.html
-[Demo]: https://raw.githubusercontent.com/agorf/react-use-sync-scroll/master/demo.html
+[Demo]: https://agorf.github.io/react-use-sync-scroll/demo.html
 
 ## Install
 

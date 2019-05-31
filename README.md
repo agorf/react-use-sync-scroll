@@ -3,7 +3,7 @@
 A [custom][] [React hook][hooks] for synchronized, proportional, horizontal
 and/or vertical DOM element scrolling.
 
-[Demo][]
+**[Demo][]**
 
 [custom]: https://reactjs.org/docs/hooks-custom.html
 [hooks]: https://reactjs.org/docs/hooks-intro.html

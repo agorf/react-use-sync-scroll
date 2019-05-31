@@ -26,7 +26,7 @@ yarn add react-use-sync-scroll
 Or in a browser:
 
 ```html
-<script scr="https://unpkg.com/react-use-sync-scroll/dist/index.js"></script>
+<script src="https://unpkg.com/react-use-sync-scroll/dist/index.js"></script>
 ```
 
 ## Use

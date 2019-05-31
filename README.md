@@ -37,7 +37,9 @@ The hook accepts two arguments:
 - An options object to define whether to synchronize `horizontal` or `vertical`
   scrolling (both default to `false`)
 
-It returns an array of refs to assign to your elements. For example:
+It returns an array of refs to assign to your elements.
+
+For example:
 
 ```javascript
 import useSyncScroll from 'react-use-sync-scroll';

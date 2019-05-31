@@ -6,7 +6,7 @@ and/or vertical DOM element scrolling.
 [custom]: https://reactjs.org/docs/hooks-custom.html
 [hooks]: https://reactjs.org/docs/hooks-intro.html
 
-## Installation
+## Install
 
 With [npm](https://www.npmjs.com/):
 

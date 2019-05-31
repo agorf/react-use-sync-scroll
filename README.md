@@ -3,8 +3,11 @@
 A [custom][] [React hook][hooks] for synchronized, proportional, horizontal
 and/or vertical DOM element scrolling.
 
+[Demo][]
+
 [custom]: https://reactjs.org/docs/hooks-custom.html
 [hooks]: https://reactjs.org/docs/hooks-intro.html
+[Demo]: https://raw.githubusercontent.com/agorf/react-use-sync-scroll/master/demo.html
 
 ## Install
 
@@ -51,10 +54,6 @@ function myComponent() {
   );
 }
 ```
-
-You can see a working example on [this Codesandbox][codesandbox].
-
-[codesandbox]: https://codesandbox.io/s/lry2koz5zl
 
 ## License
 

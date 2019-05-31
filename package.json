@@ -1,9 +1,11 @@
 {
   "name": "react-use-sync-scroll",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A custom React hook for synchronized DOM element scrolling",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/agorf/react-use-sync-scroll/issues"
   },
-  "homepage": "https://github.com/agorf/react-use-sync-scroll"
+  "homepage": "https://github.com/agorf/react-use-sync-scroll",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "rollup": "^1.13.0",
+    "rollup-plugin-babel": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "files": [
+    "dist"
+  ]
 }

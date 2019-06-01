@@ -1,5 +1,7 @@
 # useSyncScroll
 
+[![npm version](https://badge.fury.io/js/react-use-sync-scroll.png)](https://www.npmjs.com/package/react-use-sync-scroll)
+
 A [custom][] [React hook][hooks] for synchronized, proportional, horizontal
 and/or vertical DOM element scrolling.
 

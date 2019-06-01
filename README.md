@@ -19,13 +19,13 @@ With [npm](https://www.npmjs.com/):
 npm install react-use-sync-scroll
 ```
 
-Or with [Yarn](https://yarnpkg.com/):
+With [Yarn](https://yarnpkg.com/):
 
 ```sh
 yarn add react-use-sync-scroll
 ```
 
-Or in a browser:
+In a browser:
 
 ```html
 <script src="https://unpkg.com/react-use-sync-scroll/dist/index.js"></script>

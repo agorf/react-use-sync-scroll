@@ -44,7 +44,7 @@ It returns an array of refs to assign to your elements.
 For example:
 
 ```javascript
-import useSyncScroll from 'react-use-sync-scroll';
+import useSyncScroll from 'react-use-sync-scroll'; // With npm/Yarn
 
 function SomeComponent() {
   const refs = useSyncScroll(3, { vertical: true, horizontal: false });

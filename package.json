@@ -2,6 +2,16 @@
   "name": "react-use-sync-scroll",
   "version": "0.0.2",
   "description": "A custom React hook for synchronized DOM element scrolling",
+  "keywords": [
+    "react",
+    "hook",
+    "sync",
+    "synchronized",
+    "scroll",
+    "scrolling",
+    "dom",
+    "element"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {

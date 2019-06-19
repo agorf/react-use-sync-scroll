@@ -22,7 +22,7 @@ function syncHorizontalScroll(target, others) {
 
 function useSyncScroll(refCount, { vertical, horizontal }) {
   const refs = React.useRef(
-    Array.from(Array(refCount).keys()).map(() => React.createRef(null))
+    Array.from({ length: refCount }, () => React.createRef(null))
   );
 
   const locksRef = React.useRef(0);

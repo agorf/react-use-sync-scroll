@@ -38,7 +38,7 @@ function useSyncScroll(refsRef, { vertical, horizontal }) {
         return;
       }
 
-      locksRef.current = refsRef.length - 1; // Acquire lock
+      locksRef.current = refsRef.current.length - 1; // Acquire lock
 
       const others = refsRef.current.reduce((result, ref) => {
         if (ref.current && ref.current !== target) result.push(ref.current);

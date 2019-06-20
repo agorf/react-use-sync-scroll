@@ -20,23 +20,27 @@ function syncHorizontalScroll(target, others) {
   syncScroll(target, others, "Left", "Width");
 }
 
-function useSyncScroll(refCount, { vertical, horizontal }) {
-  const refs = React.useRef(
-    Array.from({ length: refCount }, () => React.createRef(null))
-  );
+function useSyncScroll(refsRef, { vertical, horizontal }) {
+  const refsRefOk =
+    !refsRef || // refsRef falsy
+    !refsRef.current || // or not a ref
+    !refsRef.current.length || // or not an Array
+    !refsRef.current.length < 2; // or with less than 2 items
 
   const locksRef = React.useRef(0);
 
   React.useEffect(() => {
+    if (!refsRefOk) return;
+
     function handleScroll({ target }) {
       if (locksRef.current > 0) {
         locksRef.current -= 1; // Release lock by 1
         return;
       }
 
-      locksRef.current = refCount - 1; // Acquire lock
+      locksRef.current = refsRef.length - 1; // Acquire lock
 
-      const others = refs.current.reduce((result, ref) => {
+      const others = refsRef.current.reduce((result, ref) => {
         if (ref.current && ref.current !== target) result.push(ref.current);
         return result;
       }, []);
@@ -45,7 +49,7 @@ function useSyncScroll(refCount, { vertical, horizontal }) {
       if (horizontal) syncHorizontalScroll(target, others);
     }
 
-    const elements = refs.current.reduce((result, ref) => {
+    const elements = refsRef.current.reduce((result, ref) => {
       if (ref.current) result.push(ref.current);
       return result;
     }, []);
@@ -55,9 +59,9 @@ function useSyncScroll(refCount, { vertical, horizontal }) {
     return () => {
       elements.forEach(el => el.removeEventListener("scroll", handleScroll));
     };
-  }, [refCount, vertical, horizontal, locksRef]);
+  }, [refsRef, refsRefOk, vertical, horizontal, locksRef]);
 
-  return refs.current;
+  return refsRefOk;
 }
 
 export default useSyncScroll;

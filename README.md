@@ -35,11 +35,9 @@ In a browser:
 
 The hook accepts two arguments:
 
-- The number of elements to synchronize
+- A ref of refs (at least 2) of elements to synchronize
 - An options object to define whether to synchronize `horizontal` or `vertical`
   scrolling (both default to `false`)
-
-It returns an array of refs to assign to your elements.
 
 For example:
 
@@ -47,13 +45,23 @@ For example:
 import useSyncScroll from 'react-use-sync-scroll'; // With npm/Yarn
 
 function SomeComponent() {
-  const refs = useSyncScroll(3, { vertical: true, horizontal: false });
+  // Make a ref for each element to synchronize
+  const ref1 = React.useRef(null);
+  const ref2 = React.useRef(null);
+  const ref3 = React.useRef(null);
 
+  // Combine them into a single array ref
+  const refsRef = React.useRef([ref1, ref2, ref3]);
+
+  // Use the hook
+  useSyncScroll(refsRef, { vertical: true, horizontal: false });
+
+  // Render
   return (
     <div>
-      <div ref={refs[0]}>...</div>
-      <div ref={refs[1]}>...</div>
-      <div ref={refs[2]}>...</div>
+      <div ref={ref1}>...</div>
+      <div ref={ref2}>...</div>
+      <div ref={ref3}>...</div>
     </div>
   );
 }

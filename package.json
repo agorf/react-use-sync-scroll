@@ -16,7 +16,8 @@
   "module": "dist/index.es.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"*.js\""
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,9 @@
   "homepage": "https://github.com/agorf/react-use-sync-scroll",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "rollup": "^1.13.0",
     "rollup-plugin-babel": "^4.3.2"
   },

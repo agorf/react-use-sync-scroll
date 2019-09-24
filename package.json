@@ -35,12 +35,14 @@
     "eslint": "^5.16.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "rollup": "^1.13.0",
-    "rollup-plugin-babel": "^4.3.2"
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-copy": "^3.1.0"
   },
   "peerDependencies": {
     "react": ">=16.8"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "types": "dist/index.d.ts"
 }

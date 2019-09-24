@@ -5,10 +5,12 @@ function syncScroll(target, others, TopLeft, WidthHeight) {
     target[`scroll${TopLeft}`] /
     (target[`scroll${WidthHeight}`] - target[`offset${WidthHeight}`]);
 
-  others.forEach(el => {
-    el[`scroll${TopLeft}`] = Math.round(
-      percentage * (el[`scroll${WidthHeight}`] - el[`offset${WidthHeight}`])
-    );
+  window.requestAnimationFrame(() => {
+    others.forEach(el => {
+      el[`scroll${TopLeft}`] = Math.round(
+        percentage * (el[`scroll${WidthHeight}`] - el[`offset${WidthHeight}`])
+      );
+    });
   });
 }
 

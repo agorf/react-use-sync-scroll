@@ -42,7 +42,7 @@ The hook accepts two arguments:
 For example:
 
 ```javascript
-import useSyncScroll from 'react-use-sync-scroll'; // With npm/Yarn
+import useSyncScroll from 'react-use-sync-scroll';
 
 function SomeComponent() {
   // Make a ref for each element to synchronize

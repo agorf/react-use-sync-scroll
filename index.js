@@ -21,12 +21,7 @@ function syncHorizontalScroll(target, others) {
 }
 
 function useSyncScroll(refsRef, { vertical, horizontal }) {
-  const refsRefOk =
-    !refsRef || // refsRef falsy
-    !refsRef.current || // or not a ref
-    !refsRef.current.length || // or not an Array
-    !refsRef.current.length < 2; // or with less than 2 items
-
+  const refsRefOk = refsRef && refsRef.current && refsRef.current.length > 1;
   const locksRef = React.useRef(0);
 
   React.useEffect(() => {

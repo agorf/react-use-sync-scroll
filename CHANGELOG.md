@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog][kac] and this project adheres to
 
 ## [Unreleased]
 
+## [0.1.0] - 2019-10-04
+
 ### Added
 
 - TypeScript definitions
@@ -21,7 +23,7 @@ The format is based on [Keep a Changelog][kac] and this project adheres to
 - Bump lodash from 4.17.11 to 4.17.15 to address security vulnerabilities
   [#7](https://github.com/agorf/react-use-sync-scroll/pull/7)
 - Improve README.md file text
-- Update demo page for version 0.0.6
+- Update demo page for version 0.1.0
 
 ### Fixed
 
@@ -74,7 +76,8 @@ Yanked release. Accidental copy of [0.0.2][]
 
 Initial release.
 
-[Unreleased]: https://github.com/agorf/react-use-sync-scroll/compare/0.0.6...HEAD
+[Unreleased]: https://github.com/agorf/react-use-sync-scroll/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/agorf/react-use-sync-scroll/compare/0.0.6...0.1.0
 [0.0.6]: https://github.com/agorf/react-use-sync-scroll/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/agorf/react-use-sync-scroll/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/agorf/react-use-sync-scroll/compare/0.0.3...0.0.4

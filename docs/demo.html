@@ -17,22 +17,17 @@ function App() {
     whiteSpace: 'pre',
     margin: '1em 0'
   };
-  const ref1 = React.useRef(null);
-  const ref2 = React.useRef(null);
-  const ref3 = React.useRef(null);
-  const refsRef = React.useRef([ref1, ref2, ref3]);
-
-  useSyncScroll(refsRef, { vertical: true, horizontal: true });
+  const registerRef = useSyncScroll({ vertical: true, horizontal: true });
 
   return (
     <div>
-      <div ref={ref1} style={{ ...style, width: 500, height: 250 }}>
+      <div ref={registerRef} style={{ ...style, width: 500, height: 250 }}>
         {lorem}
       </div>
-      <div ref={ref2} style={{ ...style, width: 400, height: 200 }}>
+      <div ref={registerRef} style={{ ...style, width: 400, height: 200 }}>
         {lorem}
       </div>
-      <div ref={ref3} style={{ ...style, width: 300, height: 150 }}>
+      <div ref={registerRef} style={{ ...style, width: 300, height: 150 }}>
         {lorem}
       </div>
     </div>

@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog][kac] and this project adheres to
 
 ### Changed
 
+- Simplify API by returning a function to register refs (@phaistonian)
 - Prefix PRs in Changelog and add authors
 
 ## [0.1.0] - 2019-10-04

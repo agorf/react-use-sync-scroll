@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog][kac] and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- Prefix PRs in Changelog and add authors
+
 ## [0.1.0] - 2019-10-04
 
 ### Added

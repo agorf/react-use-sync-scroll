@@ -1,58 +1,62 @@
-import React from "react";
+import React, { useCallback } from 'react'
 
 function syncScroll(target, others, TopLeft, WidthHeight) {
   const percentage =
-    target[`scroll${TopLeft}`] /
-    (target[`scroll${WidthHeight}`] - target[`offset${WidthHeight}`]);
+    target[`scroll${TopLeft}`] / (target[`scroll${WidthHeight}`] - target[`offset${WidthHeight}`])
 
+  // eslint-disable-next-line no-undef
   window.requestAnimationFrame(() => {
     others.forEach(el => {
       el[`scroll${TopLeft}`] = Math.round(
-        percentage * (el[`scroll${WidthHeight}`] - el[`offset${WidthHeight}`])
-      );
-    });
-  });
+        percentage * (el[`scroll${WidthHeight}`] - el[`offset${WidthHeight}`]),
+      )
+    })
+  })
 }
 
 function syncVerticalScroll(target, others) {
-  syncScroll(target, others, "Top", "Height");
+  syncScroll(target, others, 'Top', 'Height')
 }
 
 function syncHorizontalScroll(target, others) {
-  syncScroll(target, others, "Left", "Width");
+  syncScroll(target, others, 'Left', 'Width')
 }
 
 function useSyncScroll({ vertical, horizontal }) {
-  const refsRef = React.useRef([]);
-  const locksRef = React.useRef(0);
+  const elementsRef = React.useRef([])
+  const locksRef = React.useRef(0)
 
-  React.useEffect(() => {
-    if (refsRef.current.length < 2) return;
-
-    function handleScroll({ target }) {
-      if (locksRef.current > 0) {
-        locksRef.current -= 1; // Release lock by 1
-        return;
+  const refCallback = useCallback(
+    element => {
+      const currentElements = elementsRef.current
+      if (element) {
+        // eslint-disable-next-line
+        element.addEventListener('scroll', handleScroll)
+        currentElements.push(element)
+      } else {
+        // eslint-disable-next-line
+        currentElements.forEach(el => el.removeEventListener('scroll', handleScroll))
+        currentElements.splice(0, currentElements.length)
       }
 
-      locksRef.current = refsRef.current.length - 1; // Acquire lock
+      function handleScroll({ target }) {
+        if (locksRef.current > 0) {
+          locksRef.current -= 1 // Release lock by 1
+          return
+        }
 
-      const others = refsRef.current.filter(ref => ref !== target);
+        locksRef.current = elementsRef.current.length - 1 // Acquire lock
 
-      if (vertical) syncVerticalScroll(target, others);
-      if (horizontal) syncHorizontalScroll(target, others);
-    }
+        const others = elementsRef.current.filter(ref => ref !== target)
 
-    const elements = refsRef.current;
+        if (vertical) syncVerticalScroll(target, others)
+        if (horizontal) syncHorizontalScroll(target, others)
+      }
+    },
+    [horizontal, vertical],
+  )
 
-    elements.forEach(el => el.addEventListener("scroll", handleScroll));
-
-    return () => {
-      elements.forEach(el => el.removeEventListener("scroll", handleScroll));
-    };
-  }, [refsRef, vertical, horizontal, locksRef]);
-
-  return (ref) => refsRef.current.push(ref);
+  return refCallback
 }
 
-export default useSyncScroll;
+export default useSyncScroll
